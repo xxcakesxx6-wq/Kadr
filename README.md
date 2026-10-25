@@ -19,28 +19,12 @@
 
 ## Скачать и запустить
 
-Открой раздел **Releases** этого репозитория и скачай `Kadr-1.0.0-windows-x64.zip`.
+[**Скачать для Windows x64**](https://github.com/xxcakesxx6-wq/Kadr/releases)
+
+В разделе Releases выбери `Kadr-1.0.0-windows-x64.zip`.
 Распакуй архив целиком в отдельную папку и запусти **Kadr.exe**. Установка не требуется.
 
 Поддерживается Windows 10/11 x64. Для каталога, постеров и онлайн-источников нужен интернет. Доступность источников зависит от сторонних сервисов.
-
-## Разработка
-
-Нужны Windows x64 и Node.js 22.12 или новее.
-
-```sh
-npm ci
-npm run check
-npm start
-```
-
-Создать переносимую сборку:
-
-```sh
-npm run package
-```
-
-Архив и контрольная сумма появятся в `release/`. Зависимости, сборки, резервные копии и пользовательские данные исключены из Git.
 
 ## Лицензия и компоненты
 
@@ -48,4 +32,4 @@ npm run package
 
 This product uses the TMDB API but is not endorsed or certified by TMDB.
 
-Инструкция по публикации: [docs/PUBLISH.md](docs/PUBLISH.md).
+Для разработчиков: [запуск и сборка из исходников](docs/DEVELOPMENT.md).
