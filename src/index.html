@@ -1,0 +1,91 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кадр</title>
+    <script src="frame-themes.js"></script>
+    <!-- Remote plugins need scripts/styles/connections from anywhere, so only the directives
+         that can never be needed are enforced: no plugins/embeds, no <base> hijacking. -->
+    <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'">
+
+    <link rel="stylesheet" href="./vender/scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./vender/keypad/style.css">
+
+    <script>
+        window.lampa_settings={account_use:false,account_sync:false,socket_use:false,socket_methods:false,services:false,plugins_store:false,disable_features:{discuss:true,ai:true,ads:true,remote_configuration:true}};
+        if (!localStorage.getItem('language')) localStorage.setItem('language', 'ru');
+        if (!localStorage.getItem('source')) localStorage.setItem('source', 'tmdb');
+        // Load the engine assets bundled with this release.
+        (function () {
+            var assets = (window.__kadrAssets && window.__kadrAssets.js)
+                ? window.__kadrAssets
+                : { js: 'app.js', css: 'css/app.css?v=4.56' };
+
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = assets.css;
+            document.head.appendChild(link);
+
+            window.__loadKadrCore = function () {
+                var s = document.createElement('script');
+                s.src = assets.js;
+                s.onerror = function () {
+                    if (assets.js === 'app.js') return;
+                    // Downloaded core failed to load — fall back to the bundled one.
+                    var f = document.createElement('script');
+                    f.src = 'app.js';
+                    document.body.appendChild(f);
+                };
+                document.body.appendChild(s);
+            };
+        })();
+    </script>
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/frame-shell.css">
+    <script src="frame-network.js" defer></script>
+    <link rel="stylesheet" href="css/frame-network.css">
+    <script src="frame.js" defer></script>
+    <script src="frame-shell.js" defer></script>
+    <script src="frame-details.js" defer></script>
+    <script src="frame-sources.js" defer></script>
+    <script src="frame-person.js" defer></script>
+    <script src="frame-library.js" defer></script>
+    <link rel="stylesheet" href="css/frame-library.css">
+    <link rel="stylesheet" href="css/frame-person.css">
+    <link rel="stylesheet" href="css/frame-details.css">
+    <link rel="stylesheet" href="css/frame-film.css">
+    <link rel="stylesheet" href="css/frame-online.css">
+    <script src="frame-online.js" defer></script>
+    <link rel="stylesheet" href="css/frame-player.css">
+    <script src="frame-player.js" defer></script>
+    <link rel="stylesheet" href="css/frame-catalog.css">
+    <link rel="stylesheet" href="css/frame-themes.css">
+</head>
+<body class="frame-theme kadr-booting" style="background: #101416;">
+    <div class="kadr-window-bar"><span class="kadr-window-icon">[ ]</span><span>Кадр</span></div>
+    <div class="kadr-splash"><div class="kadr-splash-mark"><i></i><span>кадр.</span></div><div class="kadr-splash-tagline">Кино в центре внимания</div><div class="kadr-splash-progress"></div><div class="kadr-splash-status">Готовим твой кинозал</div></div>
+    <script>
+        window.youtube_lazy_load = true
+    </script>
+
+    <div class="welcome"></div>
+
+    <div id="app">
+
+    </div>
+
+
+    <script src="./vender/jquery/jquery.js"></script>
+    <script src="./vender/notify/notify.js"></script>
+    <script src="./vender/scrollbar/jquery.scrollbar.js"></script>
+    <script src="./vender/navigator/navigator.js"></script>
+    <script src="./vender/keypad/keypad.js"></script>
+
+    <script>window.__loadKadrCore()</script>
+    <script src="desktop-settings.js"></script>
+    <script src="desktop-resume.js"></script>
+    <script src="desktop-audio.js"></script>
+    
+</body>
+</html>

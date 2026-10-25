@@ -1,0 +1,74 @@
+/* Palette chooser and semantic exceptions shared by every theme. */
+.frame-theme .kadr-preferences:is([data-section=interface],[data-section=player]) .scroll__content{overflow:auto!important;scrollbar-width:thin}
+.frame-theme .kadr-preferences:is([data-section=interface],[data-section=player]) .scroll__body{transform:none!important}
+.kadr-theme-picker{padding:0 0 24px;border-bottom:1px solid rgb(var(--kadr-line-rgb,255 255 255)/.1);margin-bottom:8px}
+.kadr-theme-picker h3{font-size:17px;font-weight:600;line-height:1.4;margin:0 0 5px;color:var(--kadr-white)}
+.kadr-theme-picker>p{font-size:12px;color:rgb(var(--kadr-muted-rgb,142 156 134));margin:0 0 16px}
+.kadr-theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kadr-preferences .kadr-theme-tile{display:block;min-width:0;padding:9px 9px 12px;text-align:left;border:1px solid rgb(var(--kadr-line-rgb,255 255 255)/.15);border-radius:9px;background:rgb(var(--kadr-surface-rgb,25 33 31));color:var(--kadr-white);cursor:pointer}
+.kadr-preferences .kadr-theme-tile:hover{border-color:var(--frame-accent)}
+.kadr-preferences .kadr-theme-tile[aria-checked=true]{border-color:var(--frame-accent);box-shadow:0 0 0 1px var(--frame-accent)}
+.kadr-theme-tile strong{display:block;margin:9px 3px 3px;font-size:12px;font-weight:600}
+.kadr-theme-tile small{display:block;margin:0 3px;font-size:10px;line-height:1.5;color:rgb(var(--kadr-muted-rgb,142 156 134))}
+.kadr-theme-preview{position:relative;display:flex;align-items:flex-end;gap:6px;height:64px;border-radius:5px;background:var(--preview-bg);padding:19px 10px 9px 33px;overflow:hidden;border:1px solid #80808025}
+.kadr-theme-preview:before{content:'';position:absolute;left:33px;right:11px;top:11px;height:3px;background:var(--preview-accent);border-radius:2px}
+.kadr-theme-preview-rail{position:absolute;left:0;top:0;bottom:0;width:23px;background:var(--preview-panel);border-right:1px solid #80808025}
+.kadr-theme-preview-rail:after{content:'';position:absolute;left:8px;top:10px;width:6px;height:6px;border:1px solid var(--preview-accent);box-sizing:border-box}
+.kadr-theme-preview-poster{height:29px;flex:1;max-width:32px;border-radius:3px;background:var(--preview-panel);border-top:2px solid var(--preview-accent)}
+.kadr-theme-preview-poster:nth-child(3){opacity:.75}.kadr-theme-preview-poster:nth-child(4){opacity:.5}
+html[data-kadr-tone=light] .kadr-film :is(.full-start-new__title,.kadr-film-overview){text-shadow:none}
+html[data-kadr-tone=light] .full-start-new__head *{color:inherit!important}
+/* Poster overlays and the video itself always need light text on dark scrims. */
+html[data-kadr-tone=light] :is(.frame-rating,.kadr-related-rating){background:#101416d9!important;color:#f1f4ec!important}
+html[data-kadr-tone=light] .frame-card-hover{color:#f1f4ec}
+html[data-kadr-tone=light] .kadr-player :is(.kp-speeds .selected,.kp-retry){color:#fff}
+html[data-kadr-tone=light] .kn-ok strong{color:#277341}
+html[data-kadr-tone=light] .kn-failed strong{color:#a04b25}
+html[data-kadr-tone=light] .kadr-window-bar{border-bottom-color:#24324a1a}
+html[data-kadr-tone=light] .kadr-window-icon{color:var(--frame-accent)}
+@media(max-width:1100px){.kadr-theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.kadr-theme-grid{gap:8px}.kadr-theme-tile small{font-size:9px}}
+
+.kadr-player-choice{padding:0 0 22px;border-bottom:1px solid rgb(var(--kadr-line-rgb,255 255 255)/.1);margin-bottom:8px}
+.kadr-player-choice h3{font-size:17px;line-height:1.4;margin:0 0 6px}
+.kadr-player-choice p{font-size:12px;line-height:1.6;color:rgb(var(--kadr-muted-rgb,142 156 134));margin:0 0 16px}
+.kadr-player-choice-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.kadr-player-choice-controls select{min-width:180px;flex:1;border:1px solid rgb(var(--kadr-line-rgb,255 255 255)/.16);border-radius:7px;background:rgb(var(--kadr-surface-rgb,25 33 31));color:var(--kadr-white);padding:11px 12px;font:inherit;font-size:13px}
+.kadr-preferences .kadr-player-browse{border:1px solid var(--frame-accent);border-radius:7px;color:var(--frame-accent);padding:11px 15px;font-size:12px}
+.kadr-preferences .kadr-player-browse:hover{background:rgb(var(--kadr-accent-rgb,217 238 160)/.08)}
+.kadr-player-choice-controls :disabled{opacity:.5;cursor:wait}
+.kadr-player-choice .kadr-player-choice-status{margin-bottom:0}
+.kadr-player-fullscreen{display:flex;align-items:center;gap:9px;font-size:12px;margin-top:15px;color:rgb(var(--kadr-secondary-rgb,174 186 170))}
+.kadr-player-fullscreen[hidden]{display:none}
+.kadr-player-fullscreen input{accent-color:var(--frame-accent);width:16px;height:16px}
+
+/* Lemon / charcoal: crisp navigation, restrained panels, vivid primary actions. */
+html[data-kadr-theme=lemon] .kadr-shell .kadr-nav-button.active{background:#fff44f;color:#2e2e2e;font-weight:650}
+html[data-kadr-theme=lemon] .kadr-nav-button.active:after{background:#2e2e2e}
+html[data-kadr-theme=lemon] .kadr-brand{color:#fff44f}
+html[data-kadr-theme=lemon] .kadr-contextbar{border-bottom-color:#fff44f22}
+html[data-kadr-theme=lemon] .frame-media button.active{color:#fff44f}
+html[data-kadr-theme=lemon] .frame-media button.active:after{height:3px}
+html[data-kadr-theme=lemon] :is(.frame-search:focus-within,.frame-filters){border-color:#fff44f55}
+html[data-kadr-theme=lemon] .frame-evening{background:linear-gradient(110deg,#fff44f0c,#353535);border-color:#fff44f33}
+html[data-kadr-theme=lemon] .kadr-film .button--play{font-weight:750;box-shadow:0 4px 18px #0002!important}
+html[data-kadr-theme=lemon] .frame-heading h1{font-weight:750;letter-spacing:-1px}
+html[data-kadr-theme=lemon] :is(.frame-rating,.kadr-related-rating){background:#242424e8!important;color:#fff44f!important}
+html[data-kadr-theme=lemon] .kadr-theme-tile[aria-checked=true]{box-shadow:0 0 0 1px #fff44f}
+
+/* Tiffany keeps vivid mint on charcoal; Matcha and Aqua are light palettes. */
+html[data-kadr-theme=tiffany] .kadr-shell .kadr-nav-button.active{background:#22f1a9;color:#10251d;font-weight:650}
+html[data-kadr-theme=tiffany] .kadr-nav-button.active:after{background:#10251d}
+html[data-kadr-theme=tiffany] .kadr-brand{color:#22f1a9}
+html[data-kadr-theme=tiffany] .frame-evening{background:linear-gradient(110deg,#22f1a910,#202624);border-color:#22f1a933}
+html[data-kadr-theme=tiffany] .frame-media button.active{color:#22f1a9}
+html[data-kadr-theme=matcha] .frame-theme :is(.button--play,.frame-filter-done,.frame-mood.active,.kadr-collection-done,.kn-primary){background:#9ca763!important;border-color:#7f8b4d!important;color:#253019!important}
+html[data-kadr-theme=matcha] .kadr-shell .kadr-nav-button.active{background:#9ca763;color:#253019;font-weight:650}
+html[data-kadr-theme=matcha] .kadr-nav-button.active:after{background:#253019}
+html[data-kadr-theme=matcha] .frame-evening{background:linear-gradient(110deg,#9ca76322,#fff9e8);border-color:#9ca76366}
+html[data-kadr-theme=aqua] .kadr-shell .kadr-nav-button.active{background:#95d9c0;color:#203532;font-weight:650}
+html[data-kadr-theme=aqua] .kadr-nav-button.active:after{background:#d41f26}
+html[data-kadr-theme=aqua] .kadr-pref-tab.active{background:#95d9c0;color:#203532}
+html[data-kadr-theme=aqua] .frame-evening{background:linear-gradient(110deg,#95d9c033,#f5faf8);border-color:#95d9c0}
+html[data-kadr-theme=aqua] .kadr-contextbar{border-bottom-color:#95d9c0}
+html[data-kadr-theme=aqua] .settings-param__value{background:#ffffff}
